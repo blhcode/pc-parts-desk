@@ -11,15 +11,35 @@ Local email-inbox PC building shop sim. Fake customers (via your LAN Ollama) ema
 Optional (Cloudflare-blocked PCPartPicker fetches):
 
 ```bash
+# Linux/macOS
 backend/.venv/bin/playwright install chromium
+# Windows
+backend\.venv\Scripts\playwright.exe install chromium
 ```
 
 ## Quick start
 
+### Any OS (recommended)
+
 ```bash
-cd ~/Projects/pc-parts-desk
+python start.py
+```
+
+On Windows, if `python` is not found, try `py start.py`.
+
+### Linux / macOS
+
+```bash
 chmod +x start.sh
 ./start.sh
+```
+
+### Windows
+
+Double-click `start.bat`, or in PowerShell:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\start.ps1
 ```
 
 - Frontend: http://127.0.0.1:5173  
@@ -28,11 +48,21 @@ chmod +x start.sh
 Or run separately:
 
 ```bash
-# terminal 1
-cd backend && .venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8765
+# terminal 1 — from repo root
+cd backend
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# Linux/macOS: source .venv/bin/activate
+pip install -r requirements.txt
+# from repo root:
+# Windows: set PYTHONPATH=backend
+# Linux/macOS: export PYTHONPATH=backend
+uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8765
 
 # terminal 2
-cd frontend && npm run dev
+cd frontend
+npm install
+npm run dev
 ```
 
 ## How to play
