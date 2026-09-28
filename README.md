@@ -83,3 +83,7 @@ npm run dev
 | `HEARTBEAT_TIMEOUT_SEC` | `15` |
 
 Saves live in `backend/data/saves/`.
+
+## Issues & suggestions
+
+Found a bug or have an idea? [Open an issue](https://github.com/blhcode/pc-parts-desk/issues/new/choose) and pick **Report an issue** or **Suggest something**.

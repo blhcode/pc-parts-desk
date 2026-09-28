@@ -1,0 +1,26 @@
+name: Suggest something
+description: An idea for a new feature or an improvement
+title: "[Suggestion]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Got an idea to make PC Parts Desk better? Tell us about it!
+  - type: textarea
+    id: idea
+    attributes:
+      label: What's your idea?
+      placeholder: e.g. Let me save draft replies before sending.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help?
+      description: What problem does it solve, or what would it make more fun?
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Examples, mockups or links.

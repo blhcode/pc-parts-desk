@@ -1,0 +1,59 @@
+name: Report an issue
+description: Something in PC Parts Desk is broken or behaving wrong
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! The more detail you give, the faster it can be fixed.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the problem.
+      placeholder: e.g. A customer said my $1065 build was over their $1220 budget.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a customer email
+        2. Send a parts proposal with ...
+        3. See ...
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the game?
+      options:
+        - Customer emails / replies
+        - Reviews and scoring
+        - PCPartPicker links / parts parsing
+        - Saves / title screen
+        - Shop rating, SLA or Game Over
+        - Installing / starting the game
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - Linux
+        - macOS
+        - Other
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots, email text or error messages
+      description: Paste anything that helps show the problem.
